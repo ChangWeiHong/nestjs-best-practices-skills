@@ -1,0 +1,188 @@
+{
+  "version": "1.0.0",
+  "stack": {
+    "framework": "NestJS 11",
+    "runtime": "Node.js 24",
+    "language": "TypeScript (strict)",
+    "database": "PostgreSQL",
+    "orm": "Drizzle ORM + Drizzle Kit",
+    "auth": "Better Auth + @thallesp/nestjs-better-auth",
+    "validation": "class-validator + class-transformer",
+    "docs": "@nestjs/swagger",
+    "testing": "Jest + Supertest",
+    "packageManager": "pnpm",
+    "linting": "ESLint flat config + Prettier",
+    "git": "Husky + Commitlint",
+    "toolVersion": "mise"
+  },
+  "rules": [
+    {
+      "id": "drizzle-schema-definition",
+      "title": "Drizzle Schema Definition",
+      "category": "drizzle",
+      "impact": "CRITICAL",
+      "tags": ["drizzle", "schema", "typescript", "types"]
+    },
+    {
+      "id": "drizzle-no-raw-rows-as-response",
+      "title": "Never Return Raw Drizzle Rows as API Response",
+      "category": "drizzle",
+      "impact": "CRITICAL",
+      "tags": ["drizzle", "dto", "response", "security"]
+    },
+    {
+      "id": "auth-better-auth-setup",
+      "title": "Better Auth Setup and Integration",
+      "category": "auth",
+      "impact": "CRITICAL",
+      "tags": ["auth", "better-auth", "nestjs", "security"]
+    },
+    {
+      "id": "auth-public-routes",
+      "title": "Public Route Opt-Out with @AllowAnonymous",
+      "category": "auth",
+      "impact": "CRITICAL",
+      "tags": ["auth", "guard", "decorator", "security"]
+    },
+    {
+      "id": "dto-validation",
+      "title": "DTO Validation with class-validator",
+      "category": "dto",
+      "impact": "CRITICAL",
+      "tags": ["dto", "validation", "class-validator", "security"]
+    },
+    {
+      "id": "struct-feature-modules",
+      "title": "Feature Module Structure",
+      "category": "structure",
+      "impact": "HIGH",
+      "tags": ["structure", "modules", "architecture", "nestjs"]
+    },
+    {
+      "id": "ctrl-thin-controllers",
+      "title": "Thin Controllers",
+      "category": "controllers",
+      "impact": "HIGH",
+      "tags": ["controllers", "architecture", "separation-of-concerns"]
+    },
+    {
+      "id": "ctrl-swagger-decorators",
+      "title": "Swagger Decorators on Controllers",
+      "category": "controllers",
+      "impact": "HIGH",
+      "tags": ["swagger", "openapi", "documentation", "controllers"]
+    },
+    {
+      "id": "svc-no-repository-ceremony",
+      "title": "No Repository Ceremony in Services",
+      "category": "services",
+      "impact": "HIGH",
+      "tags": ["services", "drizzle", "architecture", "simplicity"]
+    },
+    {
+      "id": "dto-swagger-properties",
+      "title": "Swagger Properties on DTOs",
+      "category": "dto",
+      "impact": "HIGH",
+      "tags": ["swagger", "dto", "openapi", "documentation"]
+    },
+    {
+      "id": "drizzle-queries-and-transactions",
+      "title": "Drizzle Queries and Transactions",
+      "category": "drizzle",
+      "impact": "HIGH",
+      "tags": ["drizzle", "queries", "transactions", "database"]
+    },
+    {
+      "id": "drizzle-migrations",
+      "title": "Drizzle Migration Workflow",
+      "category": "drizzle",
+      "impact": "HIGH",
+      "tags": ["drizzle", "migrations", "database", "production"]
+    },
+    {
+      "id": "drizzle-relations",
+      "title": "Drizzle Relations Definition",
+      "category": "drizzle",
+      "impact": "HIGH",
+      "tags": ["drizzle", "relations", "queries", "database"]
+    },
+    {
+      "id": "err-nestjs-exceptions",
+      "title": "NestJS HTTP Exceptions",
+      "category": "errors",
+      "impact": "HIGH",
+      "tags": ["errors", "exceptions", "http", "nestjs"]
+    },
+    {
+      "id": "config-env-validation",
+      "title": "Environment Variable Validation",
+      "category": "config",
+      "impact": "HIGH",
+      "tags": ["config", "validation", "environment", "startup"]
+    },
+    {
+      "id": "config-no-process-env",
+      "title": "No process.env in Services",
+      "category": "config",
+      "impact": "HIGH",
+      "tags": ["config", "environment", "services", "nestjs"]
+    },
+    {
+      "id": "auth-session-access",
+      "title": "Session Access with @Session Decorator",
+      "category": "auth",
+      "impact": "HIGH",
+      "tags": ["auth", "session", "decorator", "better-auth"]
+    },
+    {
+      "id": "test-unit-services",
+      "title": "Unit Testing Services",
+      "category": "testing",
+      "impact": "MEDIUM-HIGH",
+      "tags": ["testing", "jest", "unit", "services"]
+    },
+    {
+      "id": "test-e2e-supertest",
+      "title": "E2E Testing with Supertest",
+      "category": "testing",
+      "impact": "MEDIUM-HIGH",
+      "tags": ["testing", "e2e", "supertest", "integration"]
+    },
+    {
+      "id": "api-rest-conventions",
+      "title": "REST API Conventions",
+      "category": "api",
+      "impact": "MEDIUM-HIGH",
+      "tags": ["api", "rest", "conventions", "http"]
+    },
+    {
+      "id": "obs-structured-logging",
+      "title": "Structured Logging",
+      "category": "observability",
+      "impact": "MEDIUM",
+      "tags": ["logging", "observability", "nestjs", "security"]
+    },
+    {
+      "id": "tool-conventional-commits",
+      "title": "Conventional Commits",
+      "category": "tooling",
+      "impact": "MEDIUM",
+      "tags": ["git", "commits", "commitlint", "husky"]
+    }
+  ],
+  "categories": {
+    "drizzle": "Drizzle ORM schema, queries, migrations, relations",
+    "auth": "Better Auth integration, guards, session management",
+    "dto": "Data Transfer Objects, validation, Swagger properties",
+    "structure": "Module architecture, file organization",
+    "controllers": "Controller design, Swagger decoration, routing",
+    "services": "Service layer, database access patterns",
+    "errors": "Exception handling, error responses",
+    "config": "Configuration, environment variables",
+    "testing": "Unit and E2E testing patterns",
+    "api": "REST conventions, HTTP semantics",
+    "observability": "Logging, monitoring",
+    "tooling": "Git, commits, CI/CD tooling"
+  }
+}
