@@ -1,52 +1,47 @@
-# Skills Quick Reference
+---
+name: nestjs-best-practices
+description: Use when generating, reviewing, or refactoring a NestJS codebase that uses Drizzle ORM, Better Auth, class-validator, and Swagger. Apply the repository's stack-specific rules, read AGENTS.md for the compact workflow, then open only the relevant rule files and examples for the task.
+---
 
-## Category Index
+# NestJS Best Practices
 
-| Category | Rules | Description |
-|----------|-------|-------------|
-| `drizzle` | 5 | Schema, queries, transactions, migrations, relations |
-| `auth` | 3 | Better Auth setup, public routes, session access |
-| `dto` | 2 | Validation, Swagger properties |
-| `structure` | 1 | Feature module architecture |
-| `controllers` | 2 | Thin controllers, Swagger decorators |
-| `services` | 1 | No repository ceremony |
-| `errors` | 1 | NestJS HTTP exceptions |
-| `config` | 2 | Env validation, no process.env |
-| `testing` | 2 | Unit tests, E2E with Supertest |
-| `api` | 1 | REST conventions |
-| `observability` | 1 | Structured logging |
-| `tooling` | 1 | Conventional commits |
+Use this skill for work in a NestJS service that follows this stack:
 
-## All Rules
+- NestJS 11
+- TypeScript strict mode
+- Drizzle ORM with PostgreSQL
+- Better Auth with `@thallesp/nestjs-better-auth`
+- `class-validator` and `class-transformer`
+- `@nestjs/swagger`
+- `pnpm`
 
-| ID | Title | Impact |
-|----|-------|--------|
-| `drizzle-schema-definition` | Drizzle Schema Definition | CRITICAL |
-| `drizzle-no-raw-rows-as-response` | Never Return Raw Drizzle Rows | CRITICAL |
-| `auth-better-auth-setup` | Better Auth Setup | CRITICAL |
-| `auth-public-routes` | Public Route Opt-Out | CRITICAL |
-| `dto-validation` | DTO Validation | CRITICAL |
-| `struct-feature-modules` | Feature Module Structure | HIGH |
-| `ctrl-thin-controllers` | Thin Controllers | HIGH |
-| `ctrl-swagger-decorators` | Swagger on Controllers | HIGH |
-| `svc-no-repository-ceremony` | No Repository Ceremony | HIGH |
-| `dto-swagger-properties` | Swagger on DTOs | HIGH |
-| `drizzle-queries-and-transactions` | Queries and Transactions | HIGH |
-| `drizzle-migrations` | Migration Workflow | HIGH |
-| `drizzle-relations` | Relations Definition | HIGH |
-| `err-nestjs-exceptions` | NestJS HTTP Exceptions | HIGH |
-| `config-env-validation` | Env Validation | HIGH |
-| `config-no-process-env` | No process.env | HIGH |
-| `auth-session-access` | Session Access | HIGH |
-| `test-unit-services` | Unit Testing Services | MEDIUM-HIGH |
-| `test-e2e-supertest` | E2E with Supertest | MEDIUM-HIGH |
-| `api-rest-conventions` | REST Conventions | MEDIUM-HIGH |
-| `obs-structured-logging` | Structured Logging | MEDIUM |
-| `tool-conventional-commits` | Conventional Commits | MEDIUM |
+## First Step
 
-## Impact Level Definitions
+Read `AGENTS.md` first for the compact routing guide and non-negotiable rules.
 
-- **CRITICAL** — Violation breaks auth security, data integrity, or type safety. Block PR.
-- **HIGH** — Violation degrades maintainability or correctness significantly. Require fix before merge.
-- **MEDIUM-HIGH** — Violation reduces test coverage or API consistency. Fix in same PR if possible.
-- **MEDIUM** — Violation affects observability or team process. Fix in follow-up.
+## Workflow
+
+1. Identify the task type before reading deeper references.
+   - Auth or session work: open the relevant files in `rules/auth-*.md`
+   - DTO or controller work: open the relevant files in `rules/dto-*.md` and `rules/ctrl-*.md`
+   - Database and schema work: open the relevant files in `rules/drizzle-*.md`
+   - Config, testing, errors, structure, API, or observability work: open only the matching rule files
+2. Treat `rules/*.md` as the source of truth for detailed constraints, examples, and anti-patterns.
+3. Open files in `examples/` only when the correct implementation shape is unclear or you need a concrete comparison.
+4. Apply only the rules relevant to the current task, but always enforce the critical rules.
+
+## Always Enforce
+
+- Do not introduce Passport, custom JWT guards, or manual session auth where Better Auth is required.
+- Do not return raw Drizzle rows from API responses.
+- Do not skip DTO validation for request input.
+- Do not read `process.env` directly in services.
+- Do not generate Prisma, TypeORM, GraphQL, Fastify, or repository-wrapper patterns for this stack.
+
+## References
+
+- `AGENTS.md`: compact agent workflow and rule index
+- `rules/`: full rule definitions
+- `examples/feature-module/`: positive examples
+- `examples/anti-patterns/`: forbidden patterns
+- `metadata.json`: machine-readable rule inventory
