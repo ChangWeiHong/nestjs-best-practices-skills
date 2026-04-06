@@ -2,7 +2,7 @@
 
 ## FIRST: Read AGENTS.md
 
-Before generating any NestJS code, read `AGENTS.md` in full. It contains all the rules and patterns for this stack.
+Before generating any NestJS code, read `AGENTS.md` in full. It sits beside this file in `references/` and contains the routing rules and stack constraints for this skill.
 
 ## Stack
 
@@ -42,5 +42,5 @@ This project uses:
 ## Build
 
 ```bash
-pnpm build  # compiles rules/*.md → AGENTS.md
+pnpm build  # compiles references/rules/*.md -> references/AGENTS.md
 ```
