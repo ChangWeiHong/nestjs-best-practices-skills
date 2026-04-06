@@ -1,0 +1,14 @@
+{
+  "name": "nestjs-best-practices",
+  "version": "1.0.0",
+  "description": "NestJS AI coding agent skills repository for Claude Code and Codex",
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "build:check": "tsx scripts/build.ts && git diff --exit-code AGENTS.md"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  }
+}
