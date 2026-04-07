@@ -1,6 +1,6 @@
 ---
 name: nestjs-best-practices
-description: Apply stack-specific guidance for NestJS services that use Drizzle ORM, Better Auth, class-validator, and Swagger. Use when generating feature modules, reviewing controllers and DTOs, refactoring auth or config code, or checking NestJS code against these conventions. Start with references/AGENTS.md, then open only the relevant rule files and examples.
+description: Enforce NestJS best practices for Drizzle, Better Auth, DTO validation, and Swagger. Use for feature modules, controller or DTO reviews, auth refactors, and schema changes.
 compatibility: Claude Code and Claude.ai. Best for repositories using NestJS 11, PostgreSQL, Drizzle ORM, Better Auth, class-validator, Swagger, and pnpm.
 metadata:
   author: ChangWeiHong

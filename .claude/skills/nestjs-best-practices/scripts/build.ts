@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-const SKILL_DIR = join(process.cwd(), 'nestjs-best-practices');
+const SKILL_DIR = join(process.cwd(), '.claude', 'skills', 'nestjs-best-practices');
 const REFERENCES_DIR = join(SKILL_DIR, 'references');
 const RULES_DIR = join(REFERENCES_DIR, 'rules');
 const OUTPUT_FILE = join(REFERENCES_DIR, 'AGENTS.md');

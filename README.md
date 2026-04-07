@@ -1,28 +1,27 @@
 # nestjs-best-practices
 
-Claude Code skill repository for NestJS projects using Drizzle ORM, Better Auth, Swagger, and `class-validator`.
+Project-local Claude Code skill for NestJS projects using Drizzle ORM, Better Auth, Swagger, and `class-validator`.
 
-## Skill Package
+## Skill Location
 
-The installable skill lives in `nestjs-best-practices/`.
+The installable skill now lives at `.claude/skills/nestjs-best-practices/`.
 
-That folder follows the Claude skill packaging model:
+This matches Anthropic's current Claude Code skill layout:
 
-- `SKILL.md`: minimal entrypoint and trigger instructions
-- `references/`: detailed docs, generated guides, examples, and rule source files
-- `scripts/`: build tooling for generated artifacts
+- project skills live in `.claude/skills/<skill-name>/SKILL.md`
+- each skill directory contains `SKILL.md` plus optional supporting files
 
-For Claude Code or Claude.ai, package or upload the `nestjs-best-practices/` folder rather than the repository root.
+For Claude.ai or other upload workflows, package the `.claude/skills/nestjs-best-practices/` folder itself rather than the repository root.
 
 ## Repository Layout
 
-- `nestjs-best-practices/SKILL.md`: installable skill entrypoint
-- `nestjs-best-practices/references/AGENTS.md`: compact generated routing guide
-- `nestjs-best-practices/references/RULEBOOK.md`: full generated handbook
-- `nestjs-best-practices/references/rules/`: source-of-truth rule files
-- `nestjs-best-practices/references/examples/`: positive and negative examples
-- `nestjs-best-practices/references/metadata.json`: machine-readable rule inventory
-- `nestjs-best-practices/scripts/build.ts`: generator for the derived markdown artifacts
+- `.claude/skills/nestjs-best-practices/SKILL.md`: installable skill entrypoint
+- `.claude/skills/nestjs-best-practices/references/AGENTS.md`: compact generated routing guide
+- `.claude/skills/nestjs-best-practices/references/RULEBOOK.md`: full generated handbook
+- `.claude/skills/nestjs-best-practices/references/rules/`: source-of-truth rule files
+- `.claude/skills/nestjs-best-practices/references/examples/`: positive and negative examples
+- `.claude/skills/nestjs-best-practices/references/metadata.json`: machine-readable rule inventory
+- `.claude/skills/nestjs-best-practices/scripts/build.ts`: generator for the derived markdown artifacts
 
 ## Build
 
@@ -32,17 +31,17 @@ pnpm build
 
 This regenerates:
 
-- `nestjs-best-practices/references/AGENTS.md`
-- `nestjs-best-practices/references/RULEBOOK.md`
+- `.claude/skills/nestjs-best-practices/references/AGENTS.md`
+- `.claude/skills/nestjs-best-practices/references/RULEBOOK.md`
 
 ## Editing Rules
 
-1. Edit the relevant files in `nestjs-best-practices/references/rules/`.
+1. Edit the relevant files in `.claude/skills/nestjs-best-practices/references/rules/`.
 2. Run `pnpm build`.
-3. Review the generated changes in `nestjs-best-practices/references/AGENTS.md` and `nestjs-best-practices/references/RULEBOOK.md`.
+3. Review the generated changes in `.claude/skills/nestjs-best-practices/references/AGENTS.md` and `.claude/skills/nestjs-best-practices/references/RULEBOOK.md`.
 
 ## Usage Model
 
-- Keep `nestjs-best-practices/SKILL.md` small so skill triggering stays efficient.
+- Keep `.claude/skills/nestjs-best-practices/SKILL.md` small so skill triggering stays efficient.
 - Use `references/AGENTS.md` for compact task routing and critical rules.
 - Use `references/RULEBOOK.md` or the individual files in `references/rules/` for full guidance.

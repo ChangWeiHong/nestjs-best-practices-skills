@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "NestJS AI coding agent skills repository for Claude Code and Codex",
   "scripts": {
-    "build": "tsx nestjs-best-practices/scripts/build.ts",
-    "build:check": "tsx nestjs-best-practices/scripts/build.ts && git diff --exit-code nestjs-best-practices/references/AGENTS.md nestjs-best-practices/references/RULEBOOK.md"
+    "build": "tsx .claude/skills/nestjs-best-practices/scripts/build.ts",
+    "build:check": "tsx .claude/skills/nestjs-best-practices/scripts/build.ts && git diff --exit-code .claude/skills/nestjs-best-practices/references/AGENTS.md .claude/skills/nestjs-best-practices/references/RULEBOOK.md"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
